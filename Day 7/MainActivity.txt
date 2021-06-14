@@ -1,0 +1,30 @@
+package com.example.listexample;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import java.lang.reflect.Array;
+
+public class MainActivity extends AppCompatActivity {
+
+    //Array of strings...
+    ListView list_item;
+    String countryList[] = {"ANDORID","PYTHON","PHP","JAVA","IOS","C++","RUBY","KOTLIN","SQL","HTML"};
+    
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        list_item = (ListView) findViewById(R.id.list_item);
+        ArrayAdapter<String> arrayAdapter = new ArrayaAdapter<String>(context: this,android.R.layout.list_item,countryList);
+list_item.setAdapter(arrayAdapter);
+
+list_item.setonItemClickListener(new AdapterView.onItemClickListener(){
+    
+    @Override
+    public void onItemClick(AdapterView<?> parent , View view, int position, long id) {LENGTH_SHORT).show();
+}
+
+});
+    }
+}

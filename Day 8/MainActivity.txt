@@ -1,0 +1,26 @@
+package com.example.listexample;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import java.lang.reflect.Array;
+
+public class MainActivity extends AppCompatActivity {
+
+    //Array of strings...
+    ListView list_item;
+    String countryList[] = {"ANDORID","PYTHON","PHP","JAVA","IOS","C++","RUBY","KOTLIN","SQL","HTML"};
+    int flags[] = {R.drawable.android, R.drawable.python,R.drawable.php,R.drawable.java,R.drawable.ios,R.drawable.c,R.drawable.ruby,R.drawable.kotlin,R.drawable.mysql,R.drawable.html};
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        list_item = (ListView) findViewById(R.id.list_item);
+        CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(),countryList, flags);
+        list_item.setAdapter(customAdapter);
+
+    }
+}

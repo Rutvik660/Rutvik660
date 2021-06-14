@@ -1,0 +1,68 @@
+Activity_main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_marginTop="150dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et1"
+        android:layout_marginTop="80dp"/>
+
+    <Button
+        android:id="@+id/btsubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_marginLeft="150dp"/>
+
+</LinearLayout>
+
+MainActivity.java
+
+package com.example.day4;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText et1;
+    Button btsubmit;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate (savedInstanceState);
+        setContentView (R.layout.activity_main);
+        et1 = (EditText) findViewById (R.id.et1);
+        btsubmit = (Button) findViewById (R.id.btsubmit);
+
+        btsubmit.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+
+                String name=et1.getText ().toString ();
+                Toast.makeText (MainActivity.this, "Your Name is " +name, Toast.LENGTH_LONG).show ();
+            }
+        });
+    }
+}

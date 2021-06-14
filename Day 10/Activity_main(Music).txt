@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@drawable/pexel">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Play Music"
+        android:id="@+id/txmusic"
+        android:textSize="40dp"
+        android:layout_marginTop="150dp"
+        android:gravity="center"
+        android:textColor="@color/design_default_color_surface"/>
+
+    <Button
+        android:id="@+id/btplay"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="START MUSIC"
+        android:gravity="center"
+        android:layout_marginLeft="80dp"
+        android:textColor="@color/design_default_color_surface" />
+
+    <Button
+        android:id="@+id/btpause"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="80dp"
+        android:text="PAUSE MUSIC"
+        android:gravity="center"
+        android:textColor="@color/design_default_color_surface"/>
+
+    <Button
+        android:id="@+id/btstop"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp"
+        android:text="STOP MUSIC"
+        android:textColor="@color/design_default_color_surface"/>
+</LinearLayout>

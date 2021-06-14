@@ -1,0 +1,60 @@
+package com.example.first;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText etid;
+    RadioGroup rg;
+    EditText etemail;
+    EditText etm;
+    EditText etpassword;
+    EditText ethobbies;
+    Button btsubmit;
+    RadioButton rgm;
+    RadioButton rgf;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        etid = (EditText) findViewById(R.id.etid);
+        rg = (RadioGroup) findViewById(R.id.rg);
+        etemail = (EditText) findViewById(R.id.etemail);
+        etm = (EditText) findViewById(R.id.etm);
+        etpassword = (EditText) findViewById(R.id.etpassword);
+        ethobbies = (EditText) findViewById(R.id.ethobbies);
+        rgm = (RadioButton) findViewById(R.id.rgm);
+        rgf = (RadioButton) findViewById(R.id.rgf);
+        btsubmit = (Button) findViewById(R.id.btsubmit);
+        btsubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String idS = etid.getText().toString();
+                String emailS = etemail.getText().toString();
+                String mobileS = etm.getText().toString();
+                String passwordS = etpassword.getText().toString();
+                String hobbiesS = ethobbies.getText().toString();
+                String maleS = rgm.getText().toString();
+                String femaleS = rgf.getText().toString();
+
+                Intent intent = new Intent(MainActivity.this,ResultActivity.class);
+                intent.putExtra("NAME",idS);
+                intent.putExtra("MALE",maleS);
+                intent.putExtra("FEMALE",femaleS);
+                intent.putExtra("EMAIL",emailS);
+                intent.putExtra("MOBILE",mobileS);
+                intent.putExtra("PASSWORD",passwordS);
+                intent.putExtra("HOBBIES", hobbiesS);
+                startActivity(intent);
+            }
+        });
+    }
+}
